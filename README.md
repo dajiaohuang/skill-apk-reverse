@@ -1,32 +1,34 @@
-# APK Reverse
+﻿# APK Reverse
 
-一个用于 **APK 逆向静态分析** 的 Codex Skill：
+English | [简体中文](./README_CN.md)
 
-- 自动安装并验证本地可移植工具链（JRE / jadx / apktool）
-- 对 APK 做首轮解包与结构化排查
-- 面向后续 MCP 能力设计输出可复用分析结论
+A Codex skill for **APK reverse static analysis**:
 
-## 命名
+- Installs and verifies a portable local toolchain (JRE / jadx / apktool)
+- Runs first-pass APK unpacking and structured inspection
+- Produces reusable analysis outputs for downstream MCP capability design
 
-- Skill 名称：`apk-reverse`
-- GitHub 仓库名（按 skills 命名范式建议）：`skill-apk-reverse`。
+## Naming
 
-## 包含内容
+- Skill name: `apk-reverse`
+- GitHub repository name (recommended skill naming convention): `skill-apk-reverse`
 
-- `SKILL.md`：Skill 说明、工作流、安全边界、输出规范
-- `scripts/install_apk_tools.ps1`：一键安装可移植 APK 逆向工具
-- `agents/openai.yaml`：Agent 界面显示名与默认提示词
+## What's Included
 
-## 快速使用
+- `SKILL.md`: Skill instructions, workflow, safety boundaries, and output format
+- `scripts/install_apk_tools.ps1`: One-command installer for portable APK reverse tools
+- `agents/openai.yaml`: Agent UI display name and default prompt
 
-1. 在 Codex 中调用该 skill（`$apk-reverse`）。
-2. 若本地缺少工具，执行安装脚本：
+## Quick Start
+
+1. Invoke this skill in Codex (`$apk-reverse`).
+2. If required tools are missing locally, run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\install_apk_tools.ps1 -Workspace .
 ```
 
-3. 验证工具：
+3. Verify tools:
 
 ```powershell
 _tools\bin\java.cmd -version
@@ -34,20 +36,20 @@ _tools\bin\jadx.cmd --version
 _tools\bin\apktool.cmd --version
 ```
 
-4. 分析 APK：
+4. Analyze an APK:
 
 ```powershell
 apktool d -f app.apk -o out\apktool
 jadx -d out\jadx app.apk
 ```
 
-## 适用场景
+## Use Cases
 
-- Android APK 静态分析
-- 清点接口域名、认证字段、请求模型
-- 为 MCP 读写工具设计准备证据
+- Android APK static analysis
+- Enumerating API domains, auth fields, and request models
+- Collecting evidence for MCP read/write tool design
 
-## 注意事项
+## Notes
 
-- 默认仅做静态分析，不涉及绕过安全机制。
-- 禁止泄露 token、cookie、密钥等敏感信息。
+- Default scope is static analysis only; no security bypass techniques.
+- Never expose sensitive data such as tokens, cookies, or keys.
