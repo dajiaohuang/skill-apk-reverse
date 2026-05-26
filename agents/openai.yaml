@@ -1,4 +1,4 @@
 interface:
-  display_name: "APK Reverse Tools"
+  display_name: "APK Reverse"
   short_description: "Install and use APK unpacking tools"
-  default_prompt: "Use $apk-reverse-tools to inspect an APK, install missing unpacking tools, validate them, and run a first static analysis."
+  default_prompt: "Use $apk-reverse to inspect an APK, install missing unpacking tools, validate them, and run a first static analysis."

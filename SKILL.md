@@ -1,9 +1,9 @@
 ---
-name: apk-reverse-tools
+name: apk-reverse
 description: Install, verify, and use portable APK reverse-engineering/unpacking tools. Use when working with Android APK files, APK static analysis, jadx/apktool setup, decompiling DEX, decoding AndroidManifest/resources, inspecting React Native or Hermes bundles, extracting strings, or preparing APK-derived API/interface analysis for MCP work.
 ---
 
-# APK Reverse Tools
+# APK Reverse
 
 Use this skill to prepare a workspace-local APK analysis toolchain and run a first-pass static inspection without requiring system-wide installs.
 
@@ -35,7 +35,7 @@ Use this skill to prepare a workspace-local APK analysis toolchain and run a fir
 Run the installer from any workspace:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File C:\Users\dajiaohuang\.codex\skills\apk-reverse-tools\scripts\install_apk_tools.ps1 -Workspace D:\repo\ykst_mcp
+powershell -ExecutionPolicy Bypass -File C:\Users\dajiaohuang\.codex\skills\apk-reverse\scripts\install_apk_tools.ps1 -Workspace D:\repo\ykst_mcp
 ```
 
 Useful parameters:
